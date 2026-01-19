@@ -1,0 +1,17 @@
+
+<div>
+    <div>
+        <nav class="menu">
+            <a *ngIf="isLoggedIn();" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a *ngIf="isLoggedIn();" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            <a routerLink="/about" routerLinkActive="active">About</a>
+            <a routerLink="/services" routerLinkActive="active">Services</a>
+            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            <a *ngIf="!isLoggedIn();" routerLink="/login" routerLinkActive="active">Login</a>
+            <a *ngIf="!isLoggedIn();" routerLink="/register" routerLinkActive="active">SignUp</a>
+            <a *ngIf="isLoggedIn();" (click)="logout()" routerLink="/login" routerLinkActive="active"> <span class="user-info">
+              🟢Logout(ID:{{ user.userId }})👤{{ user.username }}
+            </span></a>
+         </nav>
+    </div>
+</div>

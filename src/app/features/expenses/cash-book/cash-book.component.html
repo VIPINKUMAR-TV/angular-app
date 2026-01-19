@@ -1,0 +1,46 @@
+<div>
+  <button (click)="addNewCategory()">+ Add New Category</button>
+  <button mat-raised-button color="primary" (click)="openAddDayDialog()">+ Add Day</button>
+</div>
+<hr />
+<h2>Grand Total: {{ getGrandTotal() }}</h2>
+<hr />
+<div *ngFor="let day of daysArray.controls; let dayIndex = index" class="day">
+  <!-- Category selector -->
+
+  <h3>
+    {{ day.get('day_date')?.value }}-
+    (Total: {{ getDayTotal(dayIndex) }})
+    <div class="category-selector">
+      <mat-form-field appearance="fill" class="cat-dropdown">
+        <mat-label>Select Category</mat-label>
+        <mat-select #selectedCat>
+          <mat-option *ngFor="let category of categories" [value]="category.catId">
+            {{ category.catName }}-{{ category.catId }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" (click)="addCategoryToDay(day.get('day_id')?.value, selectedCat.value)"
+        [disabled]="!selectedCat.value">+ Add Category</button>
+      <button (click)="removeDayById(day.get('day_id')?.value)">Remove Day</button>
+    </div>
+  </h3>
+
+  <div class="categories-row">
+    
+      <div *ngFor="let cat of getCategoriesById(day.get('day_id')?.value); let catIndex = index" class="category-box">
+      <h4>
+        {{ cat.get('cat_name')?.value}}
+        ({{ getCategoryTotal(dayIndex, catIndex) }})
+      </h4>
+      <div
+        *ngFor="let input of getInputsById(day.get('day_id')?.value, cat.get('cat_id')?.value).controls; let inputIndex = index">
+        <input type="number" [formControl]="input"
+          (blur)="updateAmount(day.get('day_id')?.value, cat.get('cat_id')?.value, inputIndex)" />
+        <button (click)="removeInputById(day.get('day_id')?.value, cat.get('cat_id')?.value, inputIndex)">-</button>
+      </div>
+      <button (click)="addInputById(day.get('day_id')?.value, cat.get('cat_id')?.value)">+ Add</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+/* styles.css */
+
+.menu {
+    display: flex;
+    gap: 20px;
+    background: #333;
+    padding: 10px;
+  }
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+  .menu a.active {
+    background: #007bff;
+  }
+  

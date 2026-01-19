@@ -1,0 +1,25 @@
+<h2>Cash Book Entry</h2>
+<div class="days">
+    <div class="day" *ngFor="let d of days">
+      <h3>Day {{ d.dayNumber }}</h3>
+  
+      <div class="categories">
+        <div class="category" *ngFor="let cat of d.categories">
+          <strong>{{ cat.cat_name }} ({{ cat.cat_status }})</strong>
+          <button (click)="addInput(cat)"> + </button>
+  
+          <div class="inputs">
+            <div *ngFor="let id of cat.inputs" class="input-row">
+              <input
+                type="text"
+                [id]="'textbox-' + d.dayNumber + '-' + cat.cat_id + '-' + id"
+                name="dayCategoryInput"
+                placeholder="Textbox {{id}} for {{cat.cat_name}} (Day {{d.dayNumber}})"
+              />
+              <button class="remove-btn" (click)="removeInput(cat, id)"> - </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

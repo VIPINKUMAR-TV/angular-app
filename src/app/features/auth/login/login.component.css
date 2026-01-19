@@ -1,0 +1,80 @@
+.login-wrapper {
+  display: flex;
+  justify-content: right;
+   /* align-items: center; */
+  height: 100vh;
+  background: var(--bg-gradient);
+  transition: background 0.3s ease;
+}
+
+.login-card {
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.title {
+  color: var(--title-color);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--subtitle-color);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.forgot-link,
+.link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover,
+.link:hover {
+  text-decoration: underline;
+}
+
+/* 🌗 THEME VARIABLES */
+:root {
+  --bg-gradient: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --title-color: #3f51b5;
+  --subtitle-color: #555;
+  --accent-color: #3f51b5;
+}
+
+body.dark-theme {
+  --bg-gradient: linear-gradient(135deg, #121212, #1e1e1e);
+  --card-bg: #242424;
+  --text-color: #eee;
+  --title-color: #bb86fc;
+  --subtitle-color: #aaa;
+  --accent-color: #bb86fc;
+}

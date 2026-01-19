@@ -1,0 +1,13 @@
+
+<div class="home" *ngIf="user; else guest">
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p>Your user ID is: {{ user.userId }}</p>
+  <p>Your email is: {{ user.email }}</p>
+</div>
+
+<ng-template #guest>
+  <h2>Please log in to continue</h2>
+</ng-template>
+
+
+

@@ -1,0 +1,33 @@
+
+<h2 mat-dialog-title class="text-center">➕ Add New Category</h2>
+<div mat-dialog-content>
+  <form [formGroup]="categoryForm" class="category-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Category Name</mat-label>
+      <input matInput formControlName="cat_name" placeholder="Enter category name" />
+      <mat-error *ngIf="categoryForm.get('cat_name')?.hasError('required')">
+        Category name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="cat_status">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Inactive">Inactive</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>User ID</mat-label>
+      <input matInput formControlName="userId" readonly />
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button color="warn" (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()" [disabled]="categoryForm.invalid">
+    Save
+  </button>
+</div>

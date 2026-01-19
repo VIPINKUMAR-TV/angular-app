@@ -1,0 +1,54 @@
+.days {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* like calendar */
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .day {
+    background: #f9f9f9;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  .categories {
+    display: flex;          /* put categories in a row */
+    flex-direction: row;    /* row layout */
+    gap: 12px;              /* spacing between categories */
+    flex-wrap: wrap;        /* allow wrapping if too many categories */
+    margin-top: 10px;
+  }
+  
+  .category {
+    flex: 1;                /* each category takes equal width */
+    min-width: 120px;       /* ensures they don’t shrink too much */
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .inputs {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .remove-btn {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background: #cc0000;
+  }
+  
