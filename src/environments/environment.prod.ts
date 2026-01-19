@@ -1,7 +1,7 @@
 export const environment = {
 
    production: true,
-  apiBaseUrl: 'https://api-gateway-ty58.onrender.com/'
+  apiBaseUrl: 'https://api-gateway-ty58.onrender.com'
   //apiBaseUrl: 'https://api-gateway.onrender.com'
   
 
